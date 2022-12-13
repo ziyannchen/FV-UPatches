@@ -3,7 +3,9 @@
 [**Paper**](https://arxiv.org/pdf/2206.01061) 
 | Ziyan Chen, Jiazhen Liu, Junyan Li, Changwen Cao, Changlong Jin, and Hakil Kim
 
-![image](figure/architecture.jpg "FV-UPatches")
+<p align="center">
+  <img src="figure/architecture.jpg" width=120>
+</p>
 
 **FV-UPatches** is a two-stage framework towards generic finger vein recognition in unseen domains.
 We provide the pre-trained U-Net model which can be easily transfered to other datasets without retraining or fine-tuning effort.
