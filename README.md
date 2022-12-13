@@ -4,7 +4,7 @@
 | Ziyan Chen, Jiazhen Liu, Junyan Li, Changwen Cao, Changlong Jin, and Hakil Kim
 
 <p align="center">
-  <img src="figure/architecture.jpg" width=120>
+  <img src="figure/architecture.jpg" width=550>
 </p>
 
 **FV-UPatches** is a two-stage framework towards generic finger vein recognition in unseen domains.
