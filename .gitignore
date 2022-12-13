@@ -1,0 +1,7 @@
+*.pth
+*.params
+*.bmp
+data/
+draw/
+bak/
+.idea/

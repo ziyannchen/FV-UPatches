@@ -1,0 +1,11 @@
+numpy
+opencv-python====4.4.0.44
+opencv-contrib-python==3.4.2.17
+matplotlib
+tqdm
+pyyaml
+natsort
+scipy
+scikit-learn
+imutils
+seaborn
