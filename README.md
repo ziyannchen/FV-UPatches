@@ -63,7 +63,7 @@ bash ./models/download_weights.sh
 ```
 
 #### Data
-Restricted by license of the public finger-vein datasets, we provide only 10 samples of three datasets to show how the pipeline works.
+Restricted by licenses of the public finger-vein datasets, we provide only 10 samples of three datasets to show how the pipeline works.
 Download from [**Google Drive**](https://drive.google.com/drive/folders/1DmJAnlWKMup1ti9UBTZgA6qKEW6Ehtsk?usp=sharing) | [**Baidu Cloud**](https://pan.baidu.com/s/1md6Fiv6AQLD2PsCZtekthA?pwd=bkfn).
 
 
