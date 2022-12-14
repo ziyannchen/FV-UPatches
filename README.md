@@ -46,6 +46,28 @@ pip install -r requirements.txt
 
 ### Models & Data
 
+#### Model Zoo
+
+|            U-Net            |        SOSNet        | TFeat|
+|:---------------------------:|:--------------------:|:---:|
+| [**unet-thu.pth**](https://drive.google.com/file/d/1NDJuzo6SpIIYCfdMlWosJSvaCsPZRicW/view?usp=share_link) | [**32×32-liberty.pth**](https://github.com/scape-research/SOSNet/blob/master/sosnet-weights/sosnet-32x32-liberty.pth) | [**tfeat-liberty.params**](https://github.com/vbalnt/tfeat/blob/master/pretrained-models/tfeat-liberty.params)|
+
+All weights file should be placed in the directory of `models/weights/`.
+You can use the provided models from the above links, or train your custom models.
+
+The above-mentioned weight files can be downloaded in [**Baidu Cloud**](https://pan.baidu.com/s/1DsOx1rHZuUROQLm-EleFhQ?pwd=srqu) as well.
+
+```bash
+# exec in your proj root directory
+bash ./models/download_weights.sh
+```
+
+#### Data
+Since the license limitation of the public finger-vein datasets, we provide only samples of the data to show how the pipeline works.
+Download from [**Google Drive**](https://drive.google.com/drive/folders/1DmJAnlWKMup1ti9UBTZgA6qKEW6Ehtsk?usp=sharing) | [**Baidu Cloud**](https://pan.baidu.com/s/1md6Fiv6AQLD2PsCZtekthA?pwd=bkfn).
+
+
+#### File Tree
 A model (weights) and data file tree can be like this:
 ```bash
 ├── ...
@@ -62,7 +84,7 @@ A model (weights) and data file tree can be like this:
         ├── seg-thu   # segmentation from U-Net trained in THU-FV dataset
         └── thi       # skeleton(thinning images) as the keypoint priors
 ```
-You have to provide the segmented data(from U-Net like `seg-thu` or traditional methods like `enh`)
+You have to provide the segmented data. The demo file tree shows segmentation data from U-Net as `seg-thu` and from traditional methods as `enh`.
 
 ## 💻 Eval
 
@@ -87,22 +109,6 @@ cd models/unet
 python eval.py
 ```
 
-### Model Zoo
-
-|            U-Net            |        SOSNet        | TFeat|
-|:---------------------------:|:--------------------:|:---:|
-| [**unet-thu.pth**](https://drive.google.com/file/d/1NDJuzo6SpIIYCfdMlWosJSvaCsPZRicW/view?usp=share_link) (Google Drive) | [**32×32-liberty.pth**](https://github.com/scape-research/SOSNet/blob/master/sosnet-weights/sosnet-32x32-liberty.pth) | [**tfeat-liberty.params**](https://github.com/vbalnt/tfeat/blob/master/pretrained-models/tfeat-liberty.params)|
-
-All weights file should be placed in the directory of `models/weights/`.
-You can use the provided models from the above links, or train your custom models.
-
-The weight files are provided in Baidu Cloud as well.
-See https://pan.baidu.com/s/1DsOx1rHZuUROQLm-EleFhQ?pwd=srqu
-
-```bash
-# exec in your proj root directory
-bash ./models/download_weights.sh
-```
 
 ### Supported Baseline
 
