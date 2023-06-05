@@ -6,8 +6,8 @@ from utils.detector import RidgeDetector
 from utils.utils import getConfig
 
 
-# If you wanna use a keypoint detector absed on SIFT/FAST/SURF, please set detector as None.
-# Detection and despcritor extraction methods are encapsulated in the same Baseline class.
+# If you wanna use a keypoint detector based on SIFT/FAST/SURF, please set detector as None.
+# Detection and descriptor extraction methods are encapsulated in the same Baseline class.
 det_dict = {
     'None': None,
     'RidgeDet': RidgeDetector(ks=11, c=4)

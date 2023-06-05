@@ -1,4 +1,4 @@
-# FV-UPatches: Learning Generic Finger-Vein Recognition in Unseen Domains
+# FV-UPatches: Towards Universal Finger-Vein Recognition with Domain Transformation
 
 [**Paper**](https://arxiv.org/pdf/2206.01061) 
 | Ziyan Chen, Jiazhen Liu, Junyan Li, Changwen Cao, Changlong Jin, and Hakil Kim
@@ -26,6 +26,7 @@ FV-UPatches is based on an open-set recognition settings, whose pipeline can be 
 ✨ Please help star this repo if it is helpful for your work. Thanks! XD.
 
 ## 🚩 Upadates
+- [ ] Release the soft label data.
 * Dec 13, 2022 - 🚀 this repo is created.
 
 ## 🔧 Install
