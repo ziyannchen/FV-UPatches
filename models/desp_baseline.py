@@ -23,9 +23,9 @@ class RootSIFT:
         return kps, descs
 
 
-class Baseline:
+class DespBaseline:
+    # Local matching baseline methods
     def __init__(self, atype='RootSIFT'):
-        
         if atype is 'RootSIFT':
             self.baseline = RootSIFT()
             self.dist_thresh = 1.2

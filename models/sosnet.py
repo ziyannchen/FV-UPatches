@@ -69,6 +69,7 @@ class SOSNet:
         self.dist_thresh = 1.2
         self.mag_factor = 3
         self.N = 32
+        self.atype = 'SOSNet'
         
     def compute(self, im, kp):
         des = describe_opencv(self.net, im, kp, self.N, self.mag_factor)

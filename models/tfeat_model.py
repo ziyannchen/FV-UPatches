@@ -46,6 +46,7 @@ class TFeat:
         TFeat.load_state_dict(torch.load(weight_file))
         TFeat.eval()
         self.net = TFeat
+        self.atype = 'TFeat'
         
         self.dist_thresh = 8
         self.mag_factor = 3

@@ -26,7 +26,12 @@ FV-UPatches is based on an open-set recognition settings, whose pipeline can be 
 ✨ Please help star this repo if it is helpful for your work. Thanks! XD.
 
 ## 🚩 Upadates
-- [ ] Release the soft label data.
+#### TODO
+- [ ] Relase Preprocessing codes (Matlab).
+- [ ] Release the soft label data 
+(Since the finger-vein data require licenses to access, we may provide the processing Matlab codes as an alternative).
+
+* June 12, 2023 - New functions (cross-dataset evaluation). To use the new features, please download new *pairs_meta* data.
 * Dec 13, 2022 - 🚀 this repo is created.
 
 ## 🔧 Install
@@ -77,11 +82,14 @@ A model (weights) and data file tree can be like this:
     ├── unet
     └── weights
 └── data
+    ├── pairs_meta
+    ├── config.yaml
     ├── ...
     ├── MMCBNU
     ├── FVUSM
     └── SDUMLA
-        ├── enh       # pseudo segmentation labels based on traditional methods
+        ├── roi
+        ├── seg      # pseudo segmentation labels based on traditional methods
         ├── seg-thu   # segmentation from U-Net trained in THU-FV dataset
         └── thi       # skeleton(thinning images) as the keypoint priors
 ```
