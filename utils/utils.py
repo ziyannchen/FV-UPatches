@@ -124,15 +124,19 @@ def my_loss(pt1, pt2):
 
     return res, good, bad
 
-
-def judge_FVC(session, prefix_num, name1, name2, step=None):
-    
-    if name1.split('_')[prefix_num] != '1' or name2.split('_')[prefix_num] != '1':
-        return True
+def judge_class_1st(session, name, prefix_num):
     if 'dual' in session:
-        judge1 = name1.split('_')[prefix_num+1]
-        judge2 = name2.split('_')[prefix_num+1]
-        if session == 'dual' and (judge1 != 's1' or judge2 != 's1'):
-            return True
-        if session == 'semi-dual' and (step <= 105 and (judge1 != 's1' or judge2 != 's2')):
-            return True
+        return name.split('_')[prefix_num] == '1' and name.split('_')[prefix_num+1] == 's1'
+    return name.split('_')[prefix_num] == '1'
+
+def judge_not_FVC(session, prefix_num, name1, name2, step=None):
+    if not judge_class_1st(session, name1, prefix_num) or not judge_class_1st(session, name2, prefix_num):
+        return True
+#     if 'dual' in session:
+#         judge1 = name1.split('_')[prefix_num+1]
+#         judge2 = name2.split('_')[prefix_num+1]
+#         if session == 'dual' and (judge1 != 's1' or judge2 != 's1'):
+#             return True
+#         if session == 'semi-dual' and (step <= 105 and (judge1 != 's1' or judge2 != 's2')):
+#             return True
+    return False

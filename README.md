@@ -26,13 +26,14 @@ FV-UPatches is based on an open-set recognition settings, whose pipeline can be 
 ✨ Please help star this repo if it is helpful for your work. Thanks! XD.
 
 ## 🚩 Upadates
+
+* June 12, 2023 - New functions (cross-dataset evaluation) added. To use the new features, please download new *pairs_meta* data.
+* Dec 13, 2022 - 🚀 this repo is created.
+
 #### TODO
 - [ ] Relase Preprocessing codes (Matlab).
 - [ ] Release the soft label data 
 (Since the finger-vein data require licenses to access, we may provide the processing Matlab codes as an alternative).
-
-* June 12, 2023 - New functions (cross-dataset evaluation). To use the new features, please download new *pairs_meta* data.
-* Dec 13, 2022 - 🚀 this repo is created.
 
 ## 🔧 Install
 ```bash
@@ -42,9 +43,8 @@ conda activate fv_upatches
 
 # 2. Follow PyTorch tutorial to install torch, torchvision (and cudatoolkit) according to your env.
 # See https://pytorch.org/get-started/previous-versions/
-# e.g. for torch1.9 + cuda v11.1
-conda install cudatoolkit=11.1
-pip install torch==1.9.1+cu111 torchvision==0.10.1+cu111 -f https://download.pytorch.org/whl/torch_stable.html
+# e.g. for cu10.2
+conda install pytorch==1.5.0 torchvision==0.6.0 cudatoolkit=10.2 -c pytorch
 
 # 3. Install additional dependencies
 pip install -r requirements.txt

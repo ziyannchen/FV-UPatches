@@ -5,6 +5,7 @@ import cv2
 def pre_processing(data, return_dtype=float):
     
     '''
+    Image enhancement
     input: data: [0, 255]
     output: 
     '''

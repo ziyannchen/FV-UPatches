@@ -1,6 +1,6 @@
 numpy
-opencv-python====4.4.0.44
-opencv-contrib-python==3.4.2.17
+opencv-python==4.4.0.44
+opencv-contrib-python==3.4.8.29
 matplotlib
 tqdm
 pyyaml
