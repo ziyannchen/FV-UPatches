@@ -5,4 +5,7 @@ data/
 draw/
 bak/
 .idea/
-
+*.pyc
+*checkpoint.py
+.ipynb_checkpoints
+results/
