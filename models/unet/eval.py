@@ -18,17 +18,16 @@ if __name__ == '__main__':
     print(PROJ_ROOT)
 
     parser = argparse.ArgumentParser()
-    parser.add_argument('-d', '--data_path', type=str, default=f'{PROJ_ROOT}/data/SDUMLA/roi', help='Name of the database in the data root dir.')
-    parser.add_argument('-w', '--model_weight', type=str, default=f'{PROJ_ROOT}/models/unet/weights/fv_unet-v1.pth')
-    parser.add_argument('-s', '--save_path', type=str, default=f'{PROJ_ROOT}/data/SDUMLA/gass-thu')
+    parser.add_argument('-d', '--data_path', type=str, default=f'{PROJ_ROOT}/data/MMCBNU/roi', help='Name of the database in the data root dir.')
+    parser.add_argument('-w', '--model_weight', type=str, default=f'{PROJ_ROOT}/models/weights/unet-thu_v1.pth')
+    parser.add_argument('-s', '--save_path', type=str, default='./outputs/MMCBNU')
     parser.add_argument('-l', '--label_path', type=str, default=None)
     args = parser.parse_args()
 
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+    print(f'Working on device ', device)
     model = UNet(weight_file=args.model_weight, train=False, device=device)
-    save_im = False
 
-    os.makedirs(args.save_path, exist_ok=True)
     trim = [10, 0, 10, 0]
     print(device)
 
@@ -79,7 +78,8 @@ if __name__ == '__main__':
 
         im_name = str(Path(im_path).resolve()).split(os.sep)[-1]
 
-        if save_im:
+        if args.save_path is not None:
+            os.makedirs(args.save_path, exist_ok=True)
             cv2.imwrite(f'{args.save_path}/{im_name}', cv2.resize(pred_y, (ori_w, ori_h)))
             if args.label_path:
                 save_combine_path = f'{args.save_path}/combine'
@@ -90,6 +90,7 @@ if __name__ == '__main__':
                     axis=0
                 )
                 cv2.imwrite(f"{save_combine_path}/{im_name}", cat_images)
+            print('All results have saved to '+args.save_path)
 
     if args.label_path:
         jaccard = metrics_score[0] / len(test_x)
@@ -99,9 +100,6 @@ if __name__ == '__main__':
         acc = metrics_score[4] / len(test_x)
         print(f"Jaccard: {jaccard:1.4f} - F1: {f1:1.4f} - Recall: {recall:1.4f} - Precision: {precision:1.4f} - Acc: {acc:1.4f}\n")
 
-    # To precisely compute the fps, set save_im=False to ignore the influence of extra I/O time.
+    # To precisely compute the fps, set args.save_im=False to ignore the influence of extra I/O time.
     fps = 1 / np.mean(time_taken)
     print("FPS: ", fps)
-
-    if save_im:
-        print('All results have saved to '+args.save_path)

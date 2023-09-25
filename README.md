@@ -115,7 +115,7 @@ To evaluate pretrained U-Net, prepare the enhanced finger vein data as the input
 # 1.download unet-xx.pth firstly in models/unet/weights
 cd models/unet
 # 2.
-python eval.py
+python eval.py -s ./outputs/MMCBNU
 ```
 
 
