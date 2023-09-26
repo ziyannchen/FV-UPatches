@@ -58,15 +58,15 @@ pip install -r requirements.txt
 |:---------------------------:|:--------------------:|:---:|
 | [**unet-thu.pth**](https://drive.google.com/file/d/1NDJuzo6SpIIYCfdMlWosJSvaCsPZRicW/view?usp=share_link) | [**32×32-liberty.pth**](https://github.com/scape-research/SOSNet/blob/master/sosnet-weights/sosnet-32x32-liberty.pth) | [**tfeat-liberty.params**](https://github.com/vbalnt/tfeat/blob/master/pretrained-models/tfeat-liberty.params)|
 
-All weights file should be placed in the directory of `models/weights/`.
+All weights file should be placed in the directory of `weights/`.
 You can use the provided models from the above links, or train your custom models.
 
 The above-mentioned weight files can be downloaded in [**Baidu Cloud**](https://pan.baidu.com/s/1DsOx1rHZuUROQLm-EleFhQ?pwd=srqu) as well.
 
-```bash
+<!-- ```bash
 # exec in your proj root directory
-bash ./models/download_weights.sh
-```
+bash ./weights/download_weights.sh
+``` -->
 
 #### Data
 Restricted by licenses of the public finger-vein datasets, we provide only 10 samples of three datasets to show how the pipeline works.
@@ -112,10 +112,9 @@ python eval.py -h
 To evaluate pretrained U-Net, prepare the enhanced finger vein data as the input and execute the script:
 
 ```bash
-# 1.download unet-xx.pth firstly in models/unet/weights
-cd models/unet
-# 2.
-python eval.py -s ./outputs/MMCBNU
+python models/unet/eval.py \
+-i data/MMCBNU/roi \
+-s ./outputs/unet/MMCBNU
 ```
 
 

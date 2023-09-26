@@ -18,7 +18,7 @@ if __name__ == '__main__':
     print(PROJ_ROOT)
 
     parser = argparse.ArgumentParser()
-    parser.add_argument('-d', '--data_path', type=str, default=f'{PROJ_ROOT}/data/MMCBNU/roi', help='Name of the database in the data root dir.')
+    parser.add_argument('-i', '--data_path', type=str, default=f'{PROJ_ROOT}/data/MMCBNU/roi', help='Name of the database in the data root dir.')
     parser.add_argument('-w', '--model_weight', type=str, default=f'{PROJ_ROOT}/models/weights/unet-thu_v1.pth')
     parser.add_argument('-s', '--save_path', type=str, default='./outputs/MMCBNU')
     parser.add_argument('-l', '--label_path', type=str, default=None)

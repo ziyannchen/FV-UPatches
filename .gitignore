@@ -1,4 +1,3 @@
-*.pth
 *.params
 *.bmp
 data/
@@ -9,3 +8,4 @@ bak/
 *checkpoint.py
 .ipynb_checkpoints
 results/
+*.DS_Store
